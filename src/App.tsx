@@ -1,13 +1,18 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import DataFetch from "./components/DataFetch";
+import Post from "./components/Post";
 
 function App() {
   return (
     <div className="App">
       <h1>User Management</h1>
-      <DataFetch status="loading" ></DataFetch>
+      <h1 className="text-3xl font-bold underline text-red-600">
+        Simple React Typescript Tailwind Sample
+      </h1>
+      {/* <DataFetch status="loading" ></DataFetch> */}
+
+      {/* <Button>Click</Button> */}
+
+      <Post></Post>
     </div>
   );
 }
