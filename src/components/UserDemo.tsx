@@ -15,7 +15,7 @@ const UserDemo = ({ users }: UserDemoProps) => {
     <div>
       <p>User Demo</p>
       {users.map((user) => {
-        const {id, name, email, age} = user
+        const { id, name, email, age } = user; //destructuring here to avoid using user.id/email in every field
         return (
           <div key={id}>
             <p>{name}</p>
