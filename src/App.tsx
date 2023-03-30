@@ -2,19 +2,28 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import User from "./components/User";
+import UserDemo from "./components/UserDemo";
 
-const user1 = {
-  name: "user name",
-  age: 2,
-  isRegistered: true,
-  language: ["Bangla", "English"],
-};
+const users = [
+  {
+    id: 1,
+    name: "Anisul",
+    email: "something@g.com",
+    age: 12,
+  },
+  {
+    id: 2,
+    name: "Anisul",
+    email: "something@g.com",
+    age: 12,
+  },
+];
 
 function App() {
   return (
     <div className="App">
       <h1>User Management</h1>
-      <User user={user1} ></User>
+      <UserDemo users={users}></UserDemo>
     </div>
   );
 }
