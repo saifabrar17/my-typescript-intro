@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import PasswordInput from "../PasswordInput";
+import PasswordInput from "../shared/PasswordInput";
 
 
-const LoginForm: React.FC = () => {
+const LoginFormEx: React.FC = () => {
   const [email, setEmail] = useState("");
 
 
@@ -31,7 +31,7 @@ const LoginForm: React.FC = () => {
           />
         </div>
         <div className="mb-6">
-        <PasswordInput label="Password" name="password"></PasswordInput>
+        {/* <PasswordInput label="Password" name="password"></PasswordInput>S */}
         </div>
         <div className="flex items-center justify-between">
           <button
@@ -46,4 +46,4 @@ const LoginForm: React.FC = () => {
   );
 };
 
-export default LoginForm;
+export default LoginFormEx;
