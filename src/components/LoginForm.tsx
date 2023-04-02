@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Input from "./Input";
+import PasswordInput from "./PasswordInput";
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(`Submitting email: ${email} and password: ${password}`);
+    console.log(`Submitting email: ${email} and password:`);
   };
 
   return (
@@ -30,22 +31,7 @@ const LoginForm: React.FC = () => {
           />
         </div>
         <div className="mb-6">
-          <label
-            className="block text-gray-700 font-bold mb-2"
-            htmlFor="password"
-          >
-            Password
-          </label>
-          <input
-            className="shadow   border rounded w-full py-2 px-3 text-gray-700 "
-            id="password"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-
-          <Input id="ok" type="text" placeholder="this" value="this vaule"> </Input>
+        <PasswordInput label="Password" name="password"></PasswordInput>
         </div>
         <div className="flex items-center justify-between">
           <button

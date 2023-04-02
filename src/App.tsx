@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import AnimatedInput from "./components/AnimatedInput";
 import LoginForm from "./components/LoginForm";
+import PasswordInput from "./components/PasswordInput";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,7 +25,9 @@ function App() {
 
       <hr />
 
-      <div className="">
+      <PasswordInput label="Password" name="password"></PasswordInput>
+
+      {/* <div className="flex">
         <label className="relative cursor-pointer">
           <input
             type="text"
@@ -35,7 +38,7 @@ function App() {
             Input
           </span>
         </label>
-      </div>
+      </div> */}
     </div>
   );
 }
