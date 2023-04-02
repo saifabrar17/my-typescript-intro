@@ -1,20 +1,24 @@
-import { useState } from "react";
 import "./App.css";
-import AnimatedInput from "./components/AnimatedInput";
-import LoginForm from "./components/LoginForm";
+
 import PasswordInput from "./components/PasswordInput";
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
-  const handleIncrement = () => {
-    setCount((count) => count + 1);
-  };
+  // const handleIncrement = () => {
+  //   setCount((count) => count + 1);
+  // };
 
   // setCount(12)
   return (
-    <div className="">
-      <h1>Count : {count}</h1>
+    <div className="py-10 mx-auto container">
+      <PasswordInput
+        label="Password"
+        name="password"
+        autoFocus={true}
+      ></PasswordInput>
+
+      {/* <h1>Count : {count}</h1>
 
       <button className="border-2 p-2 bg-yellow-200" onClick={handleIncrement}>
         Increment
@@ -23,9 +27,7 @@ function App() {
 
       <AnimatedInput></AnimatedInput>
 
-      <hr />
-
-      <PasswordInput label="Password" name="password"></PasswordInput>
+      <hr /> */}
 
       {/* <div className="flex">
         <label className="relative cursor-pointer">

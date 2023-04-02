@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Input from "./Input";
-import PasswordInput from "./PasswordInput";
+import PasswordInput from "../PasswordInput";
+
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState("");
