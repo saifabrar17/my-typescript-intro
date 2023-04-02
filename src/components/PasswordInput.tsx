@@ -7,6 +7,7 @@ interface Props {
 
 const PasswordInput: React.FC<Props> = ({ label, name }) => {
   const [showPassword, setShowPassword] = useState(false);
+  
   const inputType = showPassword ? "text" : "password";
 
   return (
@@ -23,14 +24,13 @@ const PasswordInput: React.FC<Props> = ({ label, name }) => {
           {label}
         </span>
         <button
-        type="button"
-        className="absolute right-0 top-2 px-2"
-        onClick={() => setShowPassword((prev) => !prev)}
-      >
-        {showPassword ? "Hide" : "Show"}
-      </button>
+          type="button"
+          className="absolute right-0 top-2 px-2"
+          onClick={() => setShowPassword((prev) => !prev)}
+        >
+          {showPassword ? "Hide" : "Show"}
+        </button>
       </label>
-      
     </div>
   );
 };
