@@ -53,6 +53,7 @@ const LoginForm = () => {
           label="Email"
           name="email"
           type="email"
+          autoFocus={true}
           value={formState.email}
           hasError={!!formErrors.email}
           onChangeHandler={(event) => handleChange(event, "email")}
@@ -71,7 +72,7 @@ const LoginForm = () => {
         />
       </div>
 
-      <button type="submit" className="bg-green-500 p-2 rounded-lg mt-3 text-white">Submit</button>
+      <button  type="submit" className="bg-green-500 p-2 rounded-lg mt-3 text-white">Submit</button>
 
     </form>
   );

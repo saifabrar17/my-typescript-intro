@@ -56,7 +56,7 @@ const PasswordInput: React.FC<Props> = ({
           </span>
           <button
             type="button"
-            className="absolute right-2 top-3 px-2"
+            className="absolute right-2 top-4 px-2"
             onClick={() => setShowPassword((prev) => !prev)}
           >
             {showPassword ? <HidePass /> : <ShowPass />}
