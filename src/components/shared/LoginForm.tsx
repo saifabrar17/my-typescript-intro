@@ -49,34 +49,49 @@ const LoginForm = () => {
   const hasErrors = Object.values(formErrors).some((error) => error);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <TextInput
-          label="Email"
-          name="email"
-          type="email"
-          autoFocus={true}
-          value={formState.email}
-          hasError={!!formErrors.email}
-          onChangeHandler={(event) => handleChange(event, "email")}
-          errorMsg={formErrors.email}
-        />
-      </div>
+    <div className="grid h-[80vh] place-items-center ">
+      <form onSubmit={handleSubmit}>
+        <p className="text-2xl uppercase text-gray-700 font-semibold text-center pb-5">Login</p>
+        <div>
+          <TextInput
+            label="Email"
+            name="email"
+            type="email"
+            autoFocus={true}
+            value="disabled@google.com"
+            disabled={true}
+            // value={formState.email}
+            hasError={!!formErrors.email}
+            onChangeHandler={(event) => handleChange(event, "email")}
+            errorMsg={formErrors.email}
+          />
+        </div>
 
-      <div className="mt-3">
-        <PasswordInput
-          label="Password"
-          name="password"
-          value={formState.password}
-          hasError={!!formErrors.password}
-          onChangeHandler={(event) => handleChange(event, "password")}
-          errorMsg={formErrors.password}
-        />
-      </div>
+        <div className="mt-3">
+          <PasswordInput
+            label="Password"
+            name="password"
+            disabled={true}
+            value={formState.password}
+            hasError={!!formErrors.password}
+            onChangeHandler={(event) => handleChange(event, "password")}
+            errorMsg={formErrors.password}
+          />
+        </div>
 
-      <button  type="submit" disabled={hasErrors} className={`${hasErrors ? 'bg-slate-300 text-white cursor-not-allowed': 'bg-green-500 text-white'} p-2 rounded-lg mt-`}>Submit</button>
-
-    </form>
+        <button
+          type="submit"
+          disabled={hasErrors}
+          className={`${
+            hasErrors
+              ? "bg-slate-300 text-white cursor-not-allowed"
+              : "bg-green-500 text-white"
+          } p-2 rounded-lg mt-`}
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 

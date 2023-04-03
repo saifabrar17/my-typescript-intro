@@ -37,6 +37,9 @@ const TextInput: React.FC<Props> = ({
               hasError
                 ? "border-red-500 focus:border-red-500"
                 : "border-gray-400 hover:border-gray-600"
+            } ${
+              disabled &&
+              "bg-white rounded focus:outline-none disabled:opacity-25"
             }`}
           />
 
@@ -45,13 +48,13 @@ const TextInput: React.FC<Props> = ({
               hasError
                 ? "peer-focus:text-red-500"
                 : "peer-focus:text-indigo-600"
-            } `}
+            } ${disabled && "-translate-y-5"} `}
           >
             {label}
           </span>
         </label>
       </div>
-        <p className="text-red-500 pt-2">{errorMsg}</p>
+      <p className="text-red-500 pt-2">{errorMsg}</p>
     </div>
   );
 };
