@@ -71,7 +71,7 @@ const LoginForm = () => {
           <PasswordInput
             label="Password"
             name="password"
-            disabled={true}
+            // disabled={true}
             value={formState.password}
             hasError={!!formErrors.password}
             onChangeHandler={(event) => handleChange(event, "password")}

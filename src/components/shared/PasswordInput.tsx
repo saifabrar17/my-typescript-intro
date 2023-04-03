@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import HidePass from "../../assets/svg/HidePass";
+import Lock from "../../assets/svg/Lock";
 import ShowPass from "../../assets/svg/ShowPass";
 
 interface Props {
@@ -49,7 +50,7 @@ const PasswordInput: React.FC<Props> = ({
           />
 
           <span
-            className={`absolute left-0 top-2 px-1 text-lg tracking-wide  pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5 ${
+            className={`absolute left-4 top-2 px-1 text-lg tracking-wide  pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5 ${
               hasError
                 ? "peer-focus:text-red-500"
                 : "peer-focus:text-indigo-600"
@@ -64,6 +65,7 @@ const PasswordInput: React.FC<Props> = ({
           >
             {showPassword ? <HidePass /> : <ShowPass />}
           </button>
+          <Lock className="absolute left-2 top-3" />
         </label>
       </div>
       <p className="text-red-500 pt-2">{errorMsg}</p>
