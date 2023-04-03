@@ -1,10 +1,17 @@
-const Lock = ({ width = "18", height = "18", className = "" }) => {
+import React from "react";
+
+type LockProps = {
+  width: string;
+  height: string;
+};
+
+const Lock: React.FC<LockProps> = ({ width, height }) => {
   return (
     <svg
       width={width}
       height={height}
       viewBox={`0 0 ${width} ${height}`}
-      className={className}
+      // className={className}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -36,3 +43,5 @@ const Lock = ({ width = "18", height = "18", className = "" }) => {
 };
 
 export default Lock;
+
+

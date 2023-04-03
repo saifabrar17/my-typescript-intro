@@ -10,8 +10,8 @@ interface Props {
   errorMsg: string;
   disabled?: boolean;
   autoFocus?: boolean;
+  lockIcon: React.ReactNode;
   hasError?: boolean;
-  lockIcon?: boolean;
   onChangeHandler: React.ChangeEventHandler<HTMLInputElement>;
 }
 
@@ -71,7 +71,8 @@ const PasswordInput: React.FC<Props> = ({
           >
             {showPassword ? <HidePass /> : <ShowPass />}
           </button>
-          {lockIcon && <Lock className="absolute left-2 top-3" />}
+          {lockIcon && <div className="absolute left-2 top-3">{lockIcon}</div>}
+          {/* {lockIcon && <Lock className="absolute left-2 top-3" />} */}
         </label>
       </div>
       <p className="text-red-500 pt-2">{errorMsg}</p>

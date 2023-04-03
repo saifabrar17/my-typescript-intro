@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Lock from "../../assets/svg/Lock";
+import LockIcon from "../../assets/svg/LockIcon";
+import LockTest from "../../assets/svg/LockTest";
 import PasswordInput from "./PasswordInput";
 import TextInput from "./TextInput";
 
@@ -73,7 +76,7 @@ const LoginForm = () => {
             name="password"
             // disabled={true}
             value={formState.password}
-            lockIcon={true}
+            lockIcon={<LockTest width="18" height="18"></LockTest>}
             hasError={!!formErrors.password}
             onChangeHandler={(event) => handleChange(event, "password")}
             errorMsg={formErrors.password}
