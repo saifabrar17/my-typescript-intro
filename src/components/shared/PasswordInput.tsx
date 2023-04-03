@@ -11,6 +11,7 @@ interface Props {
   disabled?: boolean;
   autoFocus?: boolean;
   hasError?: boolean;
+  lockIcon?: boolean;
   onChangeHandler: React.ChangeEventHandler<HTMLInputElement>;
 }
 
@@ -20,6 +21,7 @@ const PasswordInput: React.FC<Props> = ({
   value,
   errorMsg,
   disabled = false,
+  lockIcon = false,
   autoFocus = false,
   hasError = false,
   onChangeHandler,
@@ -39,22 +41,26 @@ const PasswordInput: React.FC<Props> = ({
             value={value}
             name={name}
             onChange={onChangeHandler}
-            className={`px-4 py-2 text-lg outline-none border-2 rounded duration-200 peer  bg-inherit ${
+            className={`px-4 pl-4 py-2 text-lg outline-none border-2 rounded duration-200 peer  bg-inherit ${
               hasError
                 ? "border-red-500 focus:border-red-500"
                 : "border-gray-400 hover:border-gray-600"
             } ${
               disabled &&
               "bg-white rounded focus:outline-none disabled:opacity-25"
-            }`}
+            } ${lockIcon && "pl-8"}`}
           />
 
           <span
-            className={`absolute left-4 top-2 px-1 text-lg tracking-wide  pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5 ${
+            className={`absolute ${
+              lockIcon
+                ? "left-4 peer-valid:-translate-x-4 peer-focus:-translate-x-4"
+                : "left-0"
+            } top-2 px-1 text-lg tracking-wide  pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5  ${
               hasError
                 ? "peer-focus:text-red-500"
                 : "peer-focus:text-indigo-600"
-            } ${disabled && "-translate-y-5"}`}
+            } ${disabled && " -translate-y-5 -translate-x-4"}`}
           >
             {label}
           </span>
@@ -65,7 +71,7 @@ const PasswordInput: React.FC<Props> = ({
           >
             {showPassword ? <HidePass /> : <ShowPass />}
           </button>
-          <Lock className="absolute left-2 top-3" />
+          {lockIcon && <Lock className="absolute left-2 top-3" />}
         </label>
       </div>
       <p className="text-red-500 pt-2">{errorMsg}</p>

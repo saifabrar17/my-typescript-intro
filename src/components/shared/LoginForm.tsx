@@ -58,9 +58,9 @@ const LoginForm = () => {
             name="email"
             type="email"
             autoFocus={true}
-            value="disabled@google.com"
-            disabled={true}
-            // value={formState.email}
+            // value="disabled@google.com"
+            // disabled={true}
+            value={formState.email}
             hasError={!!formErrors.email}
             onChangeHandler={(event) => handleChange(event, "email")}
             errorMsg={formErrors.email}
@@ -73,6 +73,7 @@ const LoginForm = () => {
             name="password"
             // disabled={true}
             value={formState.password}
+            lockIcon={true}
             hasError={!!formErrors.password}
             onChangeHandler={(event) => handleChange(event, "password")}
             errorMsg={formErrors.password}
