@@ -46,6 +46,8 @@ const LoginForm = () => {
     console.log("Form submitted successfully!");
   };
 
+  const hasErrors = Object.values(formErrors).some((error) => error);
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -72,7 +74,7 @@ const LoginForm = () => {
         />
       </div>
 
-      <button  type="submit" className="bg-green-500 p-2 rounded-lg mt-3 text-white">Submit</button>
+      <button  type="submit" disabled={hasErrors} className={`${hasErrors ? 'bg-slate-300 text-white cursor-not-allowed': 'bg-green-500 text-white'} p-2 rounded-lg mt-`}>Submit</button>
 
     </form>
   );
