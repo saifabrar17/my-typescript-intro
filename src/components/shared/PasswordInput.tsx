@@ -10,8 +10,9 @@ interface Props {
   errorMsg: string;
   disabled?: boolean;
   autoFocus?: boolean;
-  lockIcon: React.ReactNode;
+  lockIcon?: React.ReactNode;
   hasError?: boolean;
+  inputRef?: React.RefObject<HTMLInputElement>
   onChangeHandler: React.ChangeEventHandler<HTMLInputElement>;
 }
 
@@ -19,6 +20,7 @@ const PasswordInput: React.FC<Props> = ({
   label,
   name,
   value,
+  inputRef,
   errorMsg,
   disabled = false,
   lockIcon = false,
@@ -38,6 +40,7 @@ const PasswordInput: React.FC<Props> = ({
             disabled={disabled}
             autoFocus={autoFocus}
             type={inputType}
+            ref={inputRef}
             value={value}
             name={name}
             onChange={onChangeHandler}

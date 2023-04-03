@@ -7,6 +7,7 @@ interface Props {
   autoFocus?: boolean;
   hasError?: boolean;
   errorMsg?: string;
+  inputRef?: React.RefObject<HTMLInputElement>
   onChangeHandler: React.ChangeEventHandler<HTMLInputElement>;
 }
 
@@ -15,6 +16,7 @@ const TextInput: React.FC<Props> = ({
   name,
   type,
   value,
+  inputRef,
   disabled = false,
   autoFocus = false,
   hasError = false,

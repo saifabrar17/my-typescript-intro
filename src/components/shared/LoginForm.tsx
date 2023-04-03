@@ -51,6 +51,8 @@ const LoginForm = () => {
 
   const hasErrors = Object.values(formErrors).some((error) => error);
 
+  const emailRef = React.useRef<HTMLInputElement>(null)
+  const passwordRef = React.useRef<HTMLInputElement>(null)
   return (
     <div className="grid h-[80vh] place-items-center ">
       <form onSubmit={handleSubmit}>
@@ -61,6 +63,7 @@ const LoginForm = () => {
             name="email"
             type="email"
             autoFocus={true}
+            inputRef={emailRef}
             // value="disabled@google.com"
             // disabled={true}
             value={formState.email}
@@ -76,7 +79,8 @@ const LoginForm = () => {
             name="password"
             // disabled={true}
             value={formState.password}
-            lockIcon={<LockTest width="18" height="18"></LockTest>}
+            inputRef={passwordRef}
+            // lockIcon={<Lock width="18" height="18"></Lock>}
             hasError={!!formErrors.password}
             onChangeHandler={(event) => handleChange(event, "password")}
             errorMsg={formErrors.password}
