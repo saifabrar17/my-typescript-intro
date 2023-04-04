@@ -1,22 +1,13 @@
-import { useState } from "react";
 import "./App.css";
+import useModal from "./components/hooks/useModal";
 import LoginForm from "./components/shared/LoginForm";
 import Modal from "./components/shared/Modal";
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-    console.log(isModalOpen);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  const { isOpen, toggle } = useModal();
 
   return (
-    <div className="py-10 mx-auto container">
+    <div className="py-10 mx-auto container relative">
       {/* <PasswordInput
         label="Password"
         name="password"
@@ -29,11 +20,14 @@ function App() {
       <LoginForm></LoginForm>
 
       <div>
-        <button onClick={handleOpenModal}>Open Modal</button>
-        <Modal title="My Modal" onClose={handleCloseModal}>
-          <p>This is my modal content!</p>
+        <button onClick={toggle}>Open Modal </button>
+        <Modal isOpen={isOpen} toggle={toggle}>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
+            deleniti recusandae dicta quam error rem quasi impedit laudantium
+            reiciendis aspernatur!
+          </p>
         </Modal>
-        {isModalOpen && <div className="modal-backdrop"></div>}
       </div>
     </div>
   );

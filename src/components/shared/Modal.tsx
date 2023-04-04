@@ -1,35 +1,21 @@
-import React, { useState } from 'react';
+import React, { ReactNode } from "react";
 
-type ModalProps = {
-  title: string;
-  onClose: () => void;
-  children: React.ReactNode;
-};
+interface ModalType {
+  children?: ReactNode;
+  isOpen: boolean;
+  toggle: () => void;
+}
 
-const Modal: React.FC<ModalProps> = ({ title, onClose, children }) => {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const handleClose = () => {
-    setIsOpen(false);
-    onClose();
-  };
-
+export default function Modal(props: ModalType) {
   return (
     <>
-      {isOpen && (
-        <div className="modal">
-          <div className="modal-overlay" onClick={handleClose}></div>
-          <div className="modal-content">
-            <h2>{title}</h2>
-            <button className="modal-close" onClick={handleClose}>
-              X
-            </button>
-            <div className="modal-body">{children}</div>
+      {props.isOpen && (
+        <div className="flex justify-center items-center absolute top-0 h-[100vh] w-full " onClick={props.toggle}>
+          <div  className="block w-[70%] h-[70%] p-4 rounded-md bg-slate-300 shadow-2xl">
+            {props.children}
           </div>
         </div>
       )}
     </>
   );
-};
-
-export default Modal;
+}
