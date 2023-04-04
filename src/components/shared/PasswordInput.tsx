@@ -10,7 +10,7 @@ interface Props {
   errorMsg: string;
   disabled?: boolean;
   autoFocus?: boolean;
-  lockIcon?: React.ReactNode;
+  passwordIcon?: React.ReactNode;
   hasError?: boolean;
   inputRef?: React.RefObject<HTMLInputElement>
   onChangeHandler: React.ChangeEventHandler<HTMLInputElement>;
@@ -23,7 +23,7 @@ const PasswordInput: React.FC<Props> = ({
   inputRef,
   errorMsg,
   disabled = false,
-  lockIcon = false,
+  passwordIcon = false,
   autoFocus = false,
   hasError = false,
   onChangeHandler,
@@ -45,22 +45,22 @@ const PasswordInput: React.FC<Props> = ({
             name={name}
             onChange={onChangeHandler}
             className={`px-4 pl-4 py-2 text-lg outline-none border-2 rounded duration-200 peer  bg-inherit ${
-              hasError
+              errorMsg
                 ? "border-red-500 focus:border-red-500"
                 : "border-gray-400 hover:border-gray-600"
             } ${
               disabled &&
               "bg-white rounded focus:outline-none disabled:opacity-25"
-            } ${lockIcon && "pl-8"}`}
+            } ${passwordIcon && "pl-8"}`}
           />
 
           <span
             className={`absolute ${
-              lockIcon
+              passwordIcon
                 ? "left-4 peer-valid:-translate-x-4 peer-focus:-translate-x-4"
                 : "left-0"
             } top-2 px-1 text-lg tracking-wide  pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5  ${
-              hasError
+              errorMsg
                 ? "peer-focus:text-red-500"
                 : "peer-focus:text-indigo-600"
             } ${disabled && " -translate-y-5 -translate-x-4"}`}
@@ -74,7 +74,7 @@ const PasswordInput: React.FC<Props> = ({
           >
             {showPassword ? <HidePass /> : <ShowPass />}
           </button>
-          {lockIcon && <div className="absolute left-2 top-3">{lockIcon}</div>}
+          {passwordIcon && <div className="absolute left-2 top-3">{passwordIcon}</div>}
           {/* {lockIcon && <Lock className="absolute left-2 top-3" />} */}
         </label>
       </div>

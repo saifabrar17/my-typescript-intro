@@ -20,7 +20,7 @@ function App() {
       <LoginForm></LoginForm>
 
       <div>
-        <button onClick={toggle}>Open Modal </button>
+        <button className="bg-green-500 rounded-md text-white p-3" onClick={toggle}>Open Modal </button>
         <Modal isOpen={isOpen} toggle={toggle}>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa

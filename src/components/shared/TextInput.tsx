@@ -1,8 +1,8 @@
 interface Props {
   label: string;
   name: string;
-  type: string;
-  value: string;
+  type?: string;
+  value?: string;
   disabled?: boolean;
   autoFocus?: boolean;
   hasError?: boolean;
@@ -36,7 +36,7 @@ const TextInput: React.FC<Props> = ({
             value={value}
             onChange={onChangeHandler}
             className={`px-4 py-2 text-lg outline-none border-2 rounded duration-200 peer  bg-inherit ${
-              hasError
+              errorMsg
                 ? "border-red-500 focus:border-red-500"
                 : "border-gray-400 hover:border-gray-600"
             } ${
@@ -47,7 +47,7 @@ const TextInput: React.FC<Props> = ({
 
           <span
             className={`absolute left-0 top-2 px-1 text-lg tracking-wide  pointer-events-none duration-200 peer-focus:text-sm peer-focus:-translate-y-5 bg-white ml-2 peer-valid:text-sm peer-valid:-translate-y-5 ${
-              hasError
+              errorMsg
                 ? "peer-focus:text-red-500"
                 : "peer-focus:text-indigo-600"
             } ${disabled && "-translate-y-5"} `}

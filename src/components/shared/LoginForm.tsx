@@ -67,7 +67,7 @@ const LoginForm = () => {
             // value="disabled@google.com"
             // disabled={true}
             value={formState.email}
-            hasError={!!formErrors.email}
+            
             onChangeHandler={(event) => handleChange(event, "email")}
             errorMsg={formErrors.email}
           />
@@ -80,8 +80,8 @@ const LoginForm = () => {
             // disabled={true}
             value={formState.password}
             inputRef={passwordRef}
-            // lockIcon={<Lock width="18" height="18"></Lock>}
-            hasError={!!formErrors.password}
+            passwordIcon={<Lock width="18" height="18"></Lock>}
+            // hasError={!!formErrors.password}
             onChangeHandler={(event) => handleChange(event, "password")}
             errorMsg={formErrors.password}
           />
