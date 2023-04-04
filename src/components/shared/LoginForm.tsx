@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Lock from "../../assets/svg/Lock";
-import LockIcon from "../../assets/svg/LockIcon";
-import LockTest from "../../assets/svg/LockTest";
 import PasswordInput from "./PasswordInput";
 import TextInput from "./TextInput";
 

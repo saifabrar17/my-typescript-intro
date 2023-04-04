@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import HidePass from "../../assets/svg/HidePass";
-import Lock from "../../assets/svg/Lock";
 import ShowPass from "../../assets/svg/ShowPass";
 
 interface Props {
