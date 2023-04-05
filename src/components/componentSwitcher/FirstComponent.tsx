@@ -3,7 +3,7 @@ import React from 'react';
 const FirstComponent = () => {
     return (
         <div>
-            <p>this is first component</p>
+            <p className='text-start'>this is first component</p>
         </div>
     );
 };

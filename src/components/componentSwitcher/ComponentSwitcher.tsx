@@ -21,52 +21,54 @@ const ComponentSwitcher: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex space-x-4">
-        <button
-          className={`py-2 px-4 rounded-md
+    <div className="shadow-2xl py-10 rounded-md">
+      <div className="flex flex-col items-center">
+        <div className="flex space-x-4">
+          <button
+            className={`py-2 px-4  border-b-2
           ${
-            currentComponent === ComponentType.SecondComponent
-              ? "bg-blue-500 text-white"
-              : "bg-gray-300"
+            currentComponent === ComponentType.FirstComponent
+              ? "border-blue-500 text-black"
+              : "border-gray-300"
           }`}
-          onClick={() => handleSwitchComponent(ComponentType.FirstComponent)}
-        >
-          Component 1
-        </button>
-        <button
-          className={`py-2 px-4 rounded-md
+            onClick={() => handleSwitchComponent(ComponentType.FirstComponent)}
+          >
+            Component 1
+          </button>
+          <button
+            className={`py-2 px-4  border-b-2
+         ${
+           currentComponent === ComponentType.SecondComponent
+             ? "border-blue-500 text-black"
+             : "border-gray-300"
+         }`}
+            onClick={() => handleSwitchComponent(ComponentType.SecondComponent)}
+          >
+            Component 2
+          </button>
+          <button
+            className={`py-2 px-4  border-b-2
           ${
-            currentComponent === ComponentType.SecondComponent
-              ? "bg-blue-500 text-white"
-              : "bg-gray-300"
+            currentComponent === ComponentType.ThirdComponent
+              ? "border-blue-500 text-black"
+              : "border-gray-300"
           }`}
-          onClick={() => handleSwitchComponent(ComponentType.SecondComponent)}
-        >
-          Component 2
-        </button>
-        <button
-          className={`py-2 px-4 rounded-md
-          ${
-            currentComponent === ComponentType.SecondComponent
-              ? "bg-blue-500 text-white"
-              : "bg-gray-300"
-          }`}
-          onClick={() => handleSwitchComponent(ComponentType.ThirdComponent)}
-        >
-          Component 3
-        </button>
-      </div>
-      <div className="mt-4">
-        {currentComponent === ComponentType.FirstComponent && (
-          <FirstComponent />
-        )}
-        {currentComponent === ComponentType.SecondComponent && (
-          <SecondComponent />
-        )}
-        {currentComponent === ComponentType.ThirdComponent && (
-          <ThirdComponent />
-        )}
+            onClick={() => handleSwitchComponent(ComponentType.ThirdComponent)}
+          >
+            Component 3
+          </button>
+        </div>
+        <div className="mt-4">
+          {currentComponent === ComponentType.FirstComponent && (
+            <FirstComponent />
+          )}
+          {currentComponent === ComponentType.SecondComponent && (
+            <SecondComponent />
+          )}
+          {currentComponent === ComponentType.ThirdComponent && (
+            <ThirdComponent />
+          )}
+        </div>
       </div>
     </div>
   );
