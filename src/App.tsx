@@ -21,9 +21,9 @@ function App() {
 
       <ComponentSwitcher />
 
-      <LoginForm></LoginForm>
+      {/* <LoginForm></LoginForm> */}
 
-      <div>
+      <div className="mt-20">
         <button className="bg-green-500 rounded-md text-white p-3" onClick={toggle}>Open Modal </button>
         <Modal isOpen={isOpen} toggle={toggle}>
           <p>
