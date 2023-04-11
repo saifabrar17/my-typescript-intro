@@ -8,7 +8,7 @@ interface Props {
   hasError?: boolean;
   errorMsg?: string;
   inputRef?: React.RefObject<HTMLInputElement>
-  onChangeHandler: React.ChangeEventHandler<HTMLInputElement>;
+  onChangeHandler?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 const TextInput: React.FC<Props> = ({

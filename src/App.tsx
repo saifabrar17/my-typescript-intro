@@ -1,7 +1,7 @@
 import "./App.css";
 import ComponentSwitcher from "./components/componentSwitcher/ComponentSwitcher";
 import useModal from "./components/hooks/useModal";
-import LoginForm from "./components/shared/LoginForm";
+// import LoginForm from "./components/shared/LoginForm";
 import Modal from "./components/shared/Modal";
 
 function App() {

@@ -8,7 +8,20 @@ enum ComponentType {
   SecondComponent,
   ThirdComponent,
 }
-
+type FormData = {
+  step1Data: {
+    name: string;
+    email: string;
+  };
+  step2Data: {
+    age: number;
+    gender: string;
+  };
+  step3Data: {
+    address: string;
+    phone: string;
+  };
+};
 const ComponentSwitcher: React.FC = () => {
   const [currentComponent, setCurrentComponent] = useState(
     ComponentType.FirstComponent

@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import TextInput from "../shared/TextInput";
 
 const ThirdComponent = () => {
-    return (
-        <div>
-            <p>this is third component</p>
-        </div>
-    );
+  return (
+    <div>
+      <TextInput label="Phone" name="phone" type="number"></TextInput>
+      <TextInput label="Email" name="email" type="email"></TextInput>
+    </div>
+  );
 };
 
 export default ThirdComponent;
