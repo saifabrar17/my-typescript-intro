@@ -21,7 +21,7 @@ function App() {
 
       <MultiStepForm></MultiStepForm>
 
-      <ComponentSwitcher />
+      {/* <ComponentSwitcher /> */}
 
       {/* <LoginForm></LoginForm> */}
 
