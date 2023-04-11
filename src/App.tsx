@@ -1,6 +1,7 @@
 import "./App.css";
 import ComponentSwitcher from "./components/componentSwitcher/ComponentSwitcher";
 import useModal from "./components/hooks/useModal";
+import MultiStepForm from "./components/multistepForm/MultiStepForm";
 // import LoginForm from "./components/shared/LoginForm";
 import Modal from "./components/shared/Modal";
 
@@ -18,12 +19,13 @@ function App() {
 
       {/* <TextInput label="Email" name="email" type="email" value="ddd" /> */}
 
+      <MultiStepForm></MultiStepForm>
 
       <ComponentSwitcher />
 
       {/* <LoginForm></LoginForm> */}
 
-      <div className="mt-20">
+      {/* <div className="mt-20">
         <button className="bg-green-500 rounded-md text-white p-3" onClick={toggle}>Open Modal </button>
         <Modal isOpen={isOpen} toggle={toggle}>
           <p>
@@ -32,7 +34,7 @@ function App() {
             reiciendis aspernatur!
           </p>
         </Modal>
-      </div>
+      </div> */}
     </div>
   );
 }
