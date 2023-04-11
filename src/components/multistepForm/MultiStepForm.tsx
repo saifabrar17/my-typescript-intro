@@ -41,12 +41,31 @@ const MultiStepForm: React.FC = () => {
         return;
       }
     } else if (step === 3) {
-      console.log(formData);
+        const passwordError = formData.password ? "" : "Password is required";
+        const confirmPasswordError = formData.confirmPassword
+          ? ""
+          : "Confirm password is required";
+        const passwordsMatch = formData.password === formData.confirmPassword;
+    
+        if (passwordError || confirmPasswordError || !passwordsMatch) {
+          setErrors({
+            password: passwordError,
+            confirmPassword: confirmPasswordError,
+            ...(passwordsMatch
+              ? {}
+              : { confirmPassword: "Passwords do not match" }),
+          });
+          return;
+        } else {
+          // If there are no errors, you can log the form data and submit the form
+          console.log(formData);
+          // Submit form
+        }
     }
 
     setErrors({});
     setStep(step + 1);
-    console.log(step);
+    // console.log(step);
   };
 
   const handlePrev = () => {
@@ -206,6 +225,7 @@ const MultiStepForm: React.FC = () => {
               step === 4 && "hidden"
             } bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
             onClick={handleNext}
+            
           >
             {step === 3 ? "Submit" : "Next"}
           </button>
