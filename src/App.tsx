@@ -1,12 +1,12 @@
 import "./App.css";
-import ComponentSwitcher from "./components/componentSwitcher/ComponentSwitcher";
-import useModal from "./components/hooks/useModal";
+// import ComponentSwitcher from "./components/componentSwitcher/ComponentSwitcher";
+// import useModal from "./components/hooks/useModal";
 import MultiStepForm from "./components/multistepForm/MultiStepForm";
 // import LoginForm from "./components/shared/LoginForm";
-import Modal from "./components/shared/Modal";
+// import Modal from "./components/shared/Modal";
 
 function App() {
-  const { isOpen, toggle } = useModal();
+  // const { isOpen, toggle } = useModal();
 
   return (
     <div className="py-10 mx-auto container relative">
