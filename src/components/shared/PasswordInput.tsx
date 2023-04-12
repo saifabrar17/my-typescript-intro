@@ -21,13 +21,15 @@ const PasswordInput: React.FC<Props> = ({
   value,
   inputRef,
   errorMsg,
-  disabled = false,
   passwordIcon = false,
   autoFocus = false,
+  disabled = false,
+  
   hasError = false,
   onChangeHandler,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
+  // test on new pc
   const inputType = showPassword ? "text" : "password";
 
   return (
