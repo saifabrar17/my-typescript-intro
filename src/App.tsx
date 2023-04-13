@@ -1,40 +1,23 @@
+import { useState } from "react";
 import "./App.css";
-// import ComponentSwitcher from "./components/componentSwitcher/ComponentSwitcher";
-// import useModal from "./components/hooks/useModal";
+
 import MultiStepForm from "./components/multistepForm/MultiStepForm";
-// import LoginForm from "./components/shared/LoginForm";
-// import Modal from "./components/shared/Modal";
+import FileInput from "./components/shared/FileInput";
 
 function App() {
-  // const { isOpen, toggle } = useModal();
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
+  const handleFileSelected = (file: File) => {
+    setSelectedFile(file);
+  };
   return (
     <div className="py-10 mx-auto container relative">
-      {/* <PasswordInput
-        label="Password"
-        name="password"
-        // autoFocus={true}
-        // hasError={true}
-      ></PasswordInput> */}
-
-      {/* <TextInput label="Email" name="email" type="email" value="ddd" /> */}
-
       <MultiStepForm></MultiStepForm>
 
-      {/* <ComponentSwitcher /> */}
-
-      {/* <LoginForm></LoginForm> */}
-
-      {/* <div className="mt-20">
-        <button className="bg-green-500 rounded-md text-white p-3" onClick={toggle}>Open Modal </button>
-        <Modal isOpen={isOpen} toggle={toggle}>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
-            deleniti recusandae dicta quam error rem quasi impedit laudantium
-            reiciendis aspernatur!
-          </p>
-        </Modal>
-      </div> */}
+      <div>
+        <FileInput onFileSelected={handleFileSelected} />
+        {selectedFile && <div>Selected file: {selectedFile.name}</div>}
+      </div>
     </div>
   );
 }

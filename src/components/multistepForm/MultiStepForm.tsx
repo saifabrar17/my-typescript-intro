@@ -41,26 +41,24 @@ const MultiStepForm: React.FC = () => {
         return;
       }
     } else if (step === 3) {
-        const passwordError = formData.password ? "" : "Password is required";
-        const confirmPasswordError = formData.confirmPassword
-          ? ""
-          : "Confirm password is required";
-        const passwordsMatch = formData.password === formData.confirmPassword;
-    
-        if (passwordError || confirmPasswordError || !passwordsMatch) {
-          setErrors({
-            password: passwordError,
-            confirmPassword: confirmPasswordError,
-            ...(passwordsMatch
-              ? {}
-              : { confirmPassword: "Passwords do not match" }),
-          });
-          return;
-        } else {
-       
-          console.log(formData);
-          
-        }
+      const passwordError = formData.password ? "" : "Password is required";
+      const confirmPasswordError = formData.confirmPassword
+        ? ""
+        : "Confirm password is required";
+      const passwordsMatch = formData.password === formData.confirmPassword;
+
+      if (passwordError || confirmPasswordError || !passwordsMatch) {
+        setErrors({
+          password: passwordError,
+          confirmPassword: confirmPasswordError,
+          ...(passwordsMatch
+            ? {}
+            : { confirmPassword: "Passwords do not match" }),
+        });
+        return;
+      } else {
+        console.log(formData);
+      }
     }
 
     setErrors({});
@@ -162,9 +160,10 @@ const MultiStepForm: React.FC = () => {
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Phone Number:
                 <input
-                  type="number"
+                  type="tel"
                   name="phoneNumber"
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                   value={formData.phoneNumber}
                   onChange={handleChange}
                 />
@@ -204,7 +203,9 @@ const MultiStepForm: React.FC = () => {
                 />
               </label>
               {errors.confirmPassword && (
-                <span className="text-red-600 my-2">{errors.confirmPassword}</span>
+                <span className="text-red-600 my-2">
+                  {errors.confirmPassword}
+                </span>
               )}
             </div>
           </div>
@@ -225,7 +226,6 @@ const MultiStepForm: React.FC = () => {
               step === 4 && "hidden"
             } bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
             onClick={handleNext}
-            
           >
             {step === 3 ? "Submit" : "Next"}
           </button>
