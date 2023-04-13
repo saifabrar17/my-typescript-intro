@@ -57,9 +57,9 @@ const MultiStepForm: React.FC = () => {
           });
           return;
         } else {
-          // If there are no errors, you can log the form data and submit the form
+       
           console.log(formData);
-          // Submit form
+          
         }
     }
 
